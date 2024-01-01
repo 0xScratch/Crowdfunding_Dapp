@@ -11,7 +11,7 @@ async function main() {
 
   await CrowdFunding.waitForDeployment();
 
-  console.log(`deployed to ${CrowdFunding.target}`);
+  console.log(`CrowdFunding deployed to ${CrowdFunding.target}`);
 }
 
 // We recommend this pattern to be able to use async/await everywhere
