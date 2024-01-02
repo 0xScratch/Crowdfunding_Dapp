@@ -4,6 +4,7 @@ import './globals.css'
 // INTERNAL IMPORT
 import NavBar from '../components/NavBar'
 import Footer from '../components/Footer'
+import {CrowdFundingProvider} from '../Context/CrowdFunding'
 
 // const inter = Inter({ subsets: ['latin'] })
 
@@ -15,10 +16,11 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <NavBar />
-      {children}
-      <Footer />
-
+      <CrowdFundingProvider>
+        <NavBar />
+        {children}
+        <Footer />
+      </CrowdFundingProvider>
     </html>
   )
 }
