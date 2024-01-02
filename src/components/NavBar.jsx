@@ -4,8 +4,8 @@ import React, { useState, useContext } from 'react'
 
 // INTERNAL IMPORT
 import { CrowdFundingContext } from '../Context/CrowdFunding'
-import { Logo } from "../components/Logo"
-import { Menu } from "../components/Menu"
+import Logo from "../components/Logo"
+import Menu from "../components/Menu"
 
 const NavBar = () => {
   const { currentAccount, connectWallet } = useContext(CrowdFundingContext)
@@ -23,7 +23,7 @@ const NavBar = () => {
               title='Company'
               className='inline-flex items-center mr-8'
             >
-              <Logo color="text-white"/>
+              <Logo color="text-white" />
               <span className='ml-2 text-xl font-bold tracking-wide text-gray-100 uppercase'>
                 Company
               </span>
@@ -43,7 +43,7 @@ const NavBar = () => {
               ))}
             </ul>
           </div>
-          
+
           {!currentAccount && (
             <ul className='items-center hidden space-x-8 lg:flex'>
               <li>
@@ -52,14 +52,14 @@ const NavBar = () => {
                   className='inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none background'
                   aria-label='Sign up'
                 >
-                  Connect Wallet 
+                  Connect Wallet
                 </button>
               </li>
             </ul>
           )}
 
           <div className='lg:hidden z-40'>
-            <button 
+            <button
               aria-label='Open Menu'
               title='Open Menu'
               className='p-2 -mr-1 transition duration-200 rounded focus:outline-none focus:shadow-outline'
@@ -72,13 +72,13 @@ const NavBar = () => {
                 <div className='p-5 bg-white border rounded shadow-sm'>
                   <div className='flex items-center justify-center mb-4'>
                     <div>
-                      <a 
+                      <a
                         href="/"
                         aria-label="Company"
                         title='Company'
                         className='inline-flex items-center'
                       >
-                        <Logo color="text-black"/>
+                        <Logo color="text-black" />
                         <span className='ml-2 text-xl font-bold tracking-wide text-gray-800 uppercase'>
                           Company
                         </span>
@@ -107,7 +107,7 @@ const NavBar = () => {
                     <ul className='space-y-4'>
                       {menuList.map((el, i) => (
                         <li key={i + 1}>
-                          <a 
+                          <a
                             href="/"
                             aria-label='Our product'
                             title='Our product'
@@ -118,7 +118,7 @@ const NavBar = () => {
                         </li>
                       ))}
                       <li>
-                        <a 
+                        <a
                           href=""
                           className='inline-flex items-center background justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none'
                           aria-label='Sign up'
