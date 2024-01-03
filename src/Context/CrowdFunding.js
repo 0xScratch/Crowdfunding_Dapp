@@ -157,7 +157,7 @@ export const CrowdFundingProvider = ({children}) => {
     }, [])
 
     // ---CONNECT WALLET FUNCTION---
-    const connectWalet = async () => {
+    const connectWallet = async () => {
         try {
             if (!window.ethereum) return console.log("Install MetaMask")
 
@@ -181,7 +181,7 @@ export const CrowdFundingProvider = ({children}) => {
                 getUserCampaigns,
                 donate,
                 getDonations,
-                connectWalet,
+                connectWallet,
             }}
         >
             {children}
