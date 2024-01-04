@@ -2,7 +2,7 @@
 
 import React, {useState, useEffect} from 'react'
 import Web3Modal from 'web3modal'
-import {ethers} from "ethers"
+import { ethers } from "ethers"
 
 // INTERNAL IMPORT
 import { CrowdFundingABI, CrowdFundingAddress } from './Constants'
@@ -43,7 +43,7 @@ export const CrowdFundingProvider = ({children}) => {
     }
 
     const getCampaigns = async () => {
-        const provider = new ethers.providers.JsonRpcProvider()
+        const provider = new ethers.BrowserProvider(window.ethereum)
         const contract = fetchContract(provider)
 
         const campaigns = await contract.getCampaigns()
@@ -64,7 +64,7 @@ export const CrowdFundingProvider = ({children}) => {
     }
 
     const getUserCampaigns = async () => {
-        const provider = new ethers.providers.JsonRpcProvider()
+        const provider = new ethers.BrowserProvider(window.ethereum)
         const contract = fetchContract(provider)
 
         const allCampaigns = await contract.getCampaigns()
