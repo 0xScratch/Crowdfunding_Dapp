@@ -20,36 +20,29 @@ const index = () => {
   const [userCampaign, setUserCampaign] = useState()
   
   useEffect(() => {
-    const getCampaignsData = async () => {
+    const getData = async () => {
       try {
-        const data = await getCampaigns()
-        setAllCampaign(data)
+        const getCampaignsData = await getCampaigns()
+        const userCampaignsData = await getUserCampaigns()
+
+        setAllCampaign(getCampaignsData)
+        setUserCampaign(userCampaignsData)
       } catch (error) {
         console.log(error)
       }
     }
 
-    getCampaignsData()
-  //   const userCampaignsData = getUserCampaigns()
-  //   return async () => {
-  //     const allData = await getCampaignsData
-  //     const userData = await userCampaignsData
-  //     setAllCampaign(allData)
-  //     setUserCampaign(userData)
-    // }
+    getData()
   }, [])
   
-  // // DONATE POPUP MODEL
-  // const [openModel, setOpenModel] = useState(false)
-  // const [donateCampaign, setDonateCampaign] = useState()
+  // DONATE POPUP MODEL
+  const [openModel, setOpenModel] = useState(false)
+  const [donateCampaign, setDonateCampaign] = useState()
   
-  // console.log(donateCampaign)
+  console.log(donateCampaign)
   return (
     <>
-    </>
-  )
-}
-      /* <Hero titleData={titleData} createCampaign={createCampaign}/>
+      <Hero titleData={titleData} createCampaign={createCampaign}/>
 
       <Card
         title="All Listed Campaign"
@@ -72,9 +65,9 @@ const index = () => {
         donate={donateCampaign}
         donateFunction={donate}
         />
-        )}
+      )}
     </>
   )
-} */
+}
 
 export default index
