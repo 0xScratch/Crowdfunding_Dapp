@@ -20,7 +20,7 @@ export const CrowdFundingProvider = ({children}) => {
         const {title, description, amount, deadline} = campaign
         const web3Modal = new Web3Modal()
         const connection = await web3Modal.connect()
-        const provider = new ethers.provider.Web3Provider(connection)
+        const provider = new ethers.providers.Web3Provider(connection)
         const signer = provider.getSigner()
         const contract = fetchContract(signer)
 
@@ -43,7 +43,7 @@ export const CrowdFundingProvider = ({children}) => {
     }
 
     const getCampaigns = async () => {
-        const provider = new ethers.BrowserProvider(window.ethereum)
+        const provider = new ethers.providers.JsonRpcProvider()
         const contract = fetchContract(provider)
 
         const campaigns = await contract.getCampaigns()
@@ -64,7 +64,7 @@ export const CrowdFundingProvider = ({children}) => {
     }
 
     const getUserCampaigns = async () => {
-        const provider = new ethers.BrowserProvider(window.ethereum)
+        const provider = new ethers.providers.JsonRpcProvider()
         const contract = fetchContract(provider)
 
         const allCampaigns = await contract.getCampaigns()
