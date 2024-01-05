@@ -56,7 +56,7 @@ const index = () => {
         allcampaign={userCampaign}
         setOpenModel={setOpenModel}
         setDonate={setDonateCampaign}
-        />
+      />
 
       {openModel && (
         <PopUp
