@@ -116,7 +116,7 @@ export const CrowdFundingProvider = ({children}) => {
         const provider = new ethers.providers.JsonRpcProvider()
         const contract = fetchContract(provider)
 
-        const donations = await contract.getDonations(pId)
+        const donations = await contract.getDonators(pId)
         const numberOfDonations = donations[0].length
 
         const parsedDonations = []

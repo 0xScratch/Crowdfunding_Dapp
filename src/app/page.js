@@ -60,10 +60,10 @@ const index = () => {
 
       {openModel && (
         <PopUp
-        setOpenModel={setOpenModel}
-        getDonations={getDonations}
-        donate={donateCampaign}
-        donateFunction={donate}
+          setOpenModel={setOpenModel}
+          getDonations={getDonations}
+          donate={donateCampaign}
+          donateFunction={donate}
         />
       )}
     </>
