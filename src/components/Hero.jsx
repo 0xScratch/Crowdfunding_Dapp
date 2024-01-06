@@ -38,17 +38,17 @@ const Hero = ({ titleData, createCampaign }) => {
         <div className="relative px-4 py-16 mx-auto overflow-hidden sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
           <div className="flex flex-col items-center justify-between xl:flex-row">
             <div className="w-full max-w-xl mb-12 xl:mb-0 xl:pr-16 xl:w-7/12">
-              <h2 className="max-w-lg mb-6 font-sans text-3xl font-bold tracking-tight text-white sm:text-5xl sm:leading-none">
-                Crypto King <br className="hiddne md:block"/>
-                Crowd Funding CK
+              <h2 className="main-heading max-w-lg mb-6 font-sans text-3xl font-bold tracking-tight text-white sm:text-5xl sm:leading-none">
+                Blockchain FundHub <br className="hidden md:block"/>
+                Crowdfunding Platform
               </h2>
               <p className="max-w-xl mb-4 text-base text-gray-200 md:text-lg">
-                At our crowdfunding organization, we strive to be unique by leveraging the power of blockchain technology. By utilizing blockchain, we ensure transparency, security, and immutability in our crowdfunding campaigns. This allows us to build trust among our supporters and provide a seamless and efficient experience for both campaign creators and contributors. Join us in revolutionizing the crowdfunding landscape with the Crypto King Crowd Funding CK platform.
+                Welcome to Blockchain FundHub, the future of crowdfunding. We're revolutionizing the way you support causes you care about. By harnessing the power of blockchain technology, we provide an unparalleled level of transparency, security, and efficiency. Join us, and be a part of the crowdfunding revolution!!
               </p>
               <a 
                 href="/"
                 aria-label=""
-                className="inline-flex items-center font-semibold tracking-wider transition-colors duration-200 text-gray-200 hover:text-teal-accent-700 text-teal-accent-400"
+                className="link-hover-effect inline-flex items-center font-semibold tracking-wider transition-colors duration-200 text-gray-200 hover:text-teal-accent-700 text-teal-accent-400"
               >
                 Learn more
                 <svg
@@ -133,7 +133,7 @@ const Hero = ({ titleData, createCampaign }) => {
                         htmlFor=""
                         className="inline-block mb-1 font-medium"
                       >
-                        Target Amount
+                        Deadline
                       </label>
                       <input 
                         onChange={(e) => setCampaign({
@@ -152,7 +152,7 @@ const Hero = ({ titleData, createCampaign }) => {
                       <button
                         onClick={(e) => createNewCampaign(e)}
                         type="submit"
-                        className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-700 hover:bg-deep-purple-accent-400 focus:shadow-outline focus:outline-none newColor"
+                        className="campaign-button-hover-effect inline-flex items-center justify-center w-full h-12 px-6 font-bold tracking-wide transition duration-200 rounded shadow-md bg-pink-400 focus:shadow-outline focus:outline-none text-white"
                       >
                         Create Campaign
                       </button>
