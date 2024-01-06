@@ -83,3 +83,10 @@
 .main-heading {
   font-family: 'Salsa', cursive;
 }
+  
+.footer-headings {
+  text-decoration: underline;
+  text-decoration-color: orange;
+  text-underline-offset: 0.3em;
+  text-decoration-thickness: 2px;
+}
