@@ -1,13 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 .background {
-  background-color: #644df6;
+  background: #20B2AA;
 }
 
 .backgroundMain {
-  background-color: #1a1a1a;
+  background: linear-gradient(to right, #008080, #000000);
 }
 
 .newColor {
@@ -21,4 +23,46 @@
   position: absolute;
   bottom: -1.9rem;
   z-index: 3;
+}
+
+.logo {
+  font-family: 'Dancing Script', cursive;
+}
+
+.link-hover-effect {
+  position: relative;
+  font-size: 1em;
+  transition: font-size 0.3s ease-in-out;
+}
+
+.link-hover-effect::after {
+  content: '';
+  position: absolute;
+  width: 50%;
+  height: 3px;
+  bottom: -5px;
+  left: 0;
+  background-color: #FFA500;
+  visibility: hidden;
+  transition: visibility 0s 0.3s, width 0.3s ease-in-out, height 0.3s ease-in-out;
+  border-radius: 5px;
+}
+
+.link-hover-effect:hover {
+  font-size: 1.1em;
+}
+
+.link-hover-effect:hover::after {
+  visibility: visible;
+  transition: visibility 0s, width 0.3s ease-in-out, height 0.3s ease-in-out;
+}
+
+.button-hover-effect {
+  transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.button-hover-effect:hover {
+  transform: scale(1.05);
+  background-color: rgba(255, 255, 255);
+  color: #20B2AA;
 }

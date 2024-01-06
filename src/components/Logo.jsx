@@ -10,10 +10,10 @@ const Logo = ({ color }) => {
       stroke="currentColor"
       fill="none"
     >
-      <rect x="3" y="1" width="7" height="12" />
-      <rect x="3" y="17" width="7" height="6" />
-      <rect x="14" y="1" width="7" height="6" />
-      <rect x="14" y="11" width="7" height="12" />
+      <circle cx="6.5" cy="7" r="5.5" />
+      <circle cx="6.5" cy="20" r="2.5" />
+      <circle cx="17.5" cy="4" r="2.5" />
+      <circle cx="17.5" cy="17" r="5.5" />
     </svg>
   )
 }
