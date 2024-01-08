@@ -25,7 +25,7 @@ const NavBar = () => {
                 title='Company'
                 className='inline-flex items-center mr-8'
               >
-                <Logo color="text-white" />
+                <Logo color="text-black" />
                 <span className='ml-2 text-4xl font-bold tracking-wide text-gray-300 logo'>
                   BlockSage
                 </span>

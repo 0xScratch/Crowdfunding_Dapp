@@ -11,7 +11,7 @@ const Hero = ({ titleData, createCampaign }) => {
   const createNewCampaign = async (e) => {
     e.preventDefault()
     try {
-      const data = await createCampaign(campaign)
+      await createCampaign(campaign)
     } catch (error) {
       console.log(error)
     }

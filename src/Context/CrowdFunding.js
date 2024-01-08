@@ -1,7 +1,6 @@
 'use client'
 
 import React, {useState, useEffect} from 'react'
-import Web3Modal from 'web3modal'
 import { ethers } from "ethers"
 
 // INTERNAL IMPORT
@@ -15,12 +14,20 @@ export const CrowdFundingContext = React.createContext()
 export const CrowdFundingProvider = ({children}) => {
     const titleData = "Crowd Funding Contract"
     const [currentAccount, setCurrentAccount] = useState("")
+    const [provider, setProvider] = useState(null)
+    const [error, setError] = useState(null)
+
+    useEffect(() => {
+        if (typeof window !== 'undefined') {
+            setProvider(new ethers.providers.Web3Provider(window.ethereum))
+            checkIfWalletConnected()
+        }
+    }, [])
 
     const createCampaign = async (campaign) => {
         const {title, description, amount, deadline} = campaign
-        const web3Modal = new Web3Modal()
-        const connection = await web3Modal.connect()
-        const provider = new ethers.providers.Web3Provider(connection)
+        // if (typeof window !== "undefined") {
+        // const provider = new ethers.providers.Web3Provider(window.ethereum)
         const signer = provider.getSigner()
         const contract = fetchContract(signer)
 
@@ -40,6 +47,7 @@ export const CrowdFundingProvider = ({children}) => {
         } catch (error) {
             console.log("contract call failed", error)
         }
+    
     }
 
     const getCampaigns = async () => {
@@ -96,9 +104,8 @@ export const CrowdFundingProvider = ({children}) => {
     } 
 
     const donate = async (pId, amount) => {
-        const web3Modal = new Web3Modal()
-        const connection = await web3Modal.connect()
-        const provider = new ethers.providers.Web3Provider(connection)
+        // if (typeof window !== "undefined") {
+        // const provider = new ethers.providers.Web3Provider(window.ethereum)
         const signer = provider.getSigner()
         const contract = fetchContract(signer)
 
@@ -110,6 +117,7 @@ export const CrowdFundingProvider = ({children}) => {
         location.reload()
 
         return campaignData
+    
     }
 
     const getDonations = async (pId) => {
