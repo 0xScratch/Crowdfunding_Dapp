@@ -69,6 +69,17 @@
   border: 2px solid #20B2AA;
 }
 
+.close-hover-effect {
+  transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.close-hover-effect:hover {
+  transform: scale(1.05);
+  background-color: #F05151;
+  color: #fff;
+  border: 2px solid #FFA500;
+}
+
 .campaign-button-hover-effect {
   transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out, color 0.3s ease-in-out;
 }

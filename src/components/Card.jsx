@@ -17,7 +17,7 @@ const Card = ({ allcampaign, setOpenModel, setDonate, title }) => {
           <div
             onClick={() => {setDonate(campaign); setOpenModel(true)}}
             key={i + 1}
-            className='cursor-pointer border overflow-hidden transition-shadow duration-300 bg-white rounded'
+            className='cursor-pointer overflow-hidden transition-shadow duration-300 bg-white rounded-lg border-2 border-teal-500'
           >
             <img 
               src="https://images.pexels.com/photos/932638/pexels-photo-932638.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=3&amp;h=750&amp;w=1260" 
