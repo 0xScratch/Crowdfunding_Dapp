@@ -1,5 +1,8 @@
 # CrowdFunding Dapp
 
+![Image Alt Text](./public/main.png)
+
+
 ## Description
 Welcome to elegant and innovative CrowdFunding Dapp! 
 
