@@ -2,52 +2,61 @@
 
 ![Image Alt Text](./public/main.png)
 
-
 ## Description
-Welcome to elegant and innovative CrowdFunding Dapp! 
+
+Welcome to elegant and innovative CrowdFunding Dapp!
 
 This Dapp provides a seamless and secure platform for individuals and organizations to raise funds for their creative projects, charitable causes, and entrepreneurial ventures. With its user-friendly interface and smart contract technology, you can easily create and manage your crowdfunding campaigns, attracting a global community of supporters.
 
 ## Table of Contents
+
 - [Installation](#installation)
 - [Usage](#usage)
 - [Contributing](#contributing)
 - [Contact](#contact)
 
 ## Installation
+
 To set up and install the CrowdFunding Dapp, follow these steps:
 
 1. Clone the repository to your local machine:
+
     ```bash
     git clone https://github.com/Aryan9592/Crowdfunding_Dapp.git
     ```
 
 2. Navigate to the project directory:
+
     ```bash
     cd Crowdfunding_Dapp
     ```
 
 3. Install the required dependencies:
+
     ```bash
     npm install
     ```
 
 4. Compile the Smart Contract:
+
     ```bash
     npx hardhat compile
     ```
 
 5. Run local hardhat blockchain node:
+
     ```bash
     npx hardhat node
     ```
 
 6. Open a different terminal for deploying the contract to local hardhat blockchain:
+
     ```bash
     npx hardhat --network localhost run scripts/deploy.js
     ```
 
 7. Run the Deployment Server:
+
     ```bash
     npm run dev
     ```
@@ -55,6 +64,7 @@ To set up and install the CrowdFunding Dapp, follow these steps:
 8. Access the CrowdFunding Dapp in your web browser at `http://localhost:3000`.
 
 ## Usage
+
 The CrowdFunding Dapp is designed to provide a seamless experience for creating and managing crowdfunding campaigns. Here are the main features and functionalities:
 
 1. **Create a Campaign**: Users can easily create a new crowdfunding campaign by providing details such as the campaign name, description, funding goal, and deadline.
@@ -69,9 +79,6 @@ The CrowdFunding Dapp is designed to provide a seamless experience for creating 
 
 <!-- With these features, the CrowdFunding Dapp empowers individuals and organizations to bring their creative projects to life and make a positive impact on the world. -->
 
-
-
-## Contributing
 ## Contributing
 
 Contributions to the CrowdFunding Dapp project are welcome! If you have ideas for new features, bug fixes, or improvements, feel free to open a pull request. Please ensure that your contributions align with the project's goals and follow the established coding conventions.
@@ -86,7 +93,6 @@ To contribute to the project, follow these steps:
 
 Thank you for your interest in improving the CrowdFunding Dapp!
 
-
-
 ## Contact
+
 React out to me through my [profile](https://github.com/Aryan9592) for any queries!

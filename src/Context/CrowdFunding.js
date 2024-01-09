@@ -85,7 +85,7 @@ export const CrowdFundingProvider = ({children}) => {
 
         const filteredCampaigns = allCampaigns.filter(
             (campaign) =>
-                campaign.owner === "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266"
+                campaign.owner === currentUser
         )
 
         const userData = filteredCampaigns.map((campaign, i) => ({
@@ -143,7 +143,8 @@ export const CrowdFundingProvider = ({children}) => {
     const checkIfWalletConnected = async () => {
         try {
             if (!window.ethereum) {
-                return setOpenError(true), setError("Install Metamask")
+                setError("Install Metamask")
+                return
             }
 
             const accounts = await window.ethereum.request({

@@ -2,14 +2,17 @@
 
 import React, { useState, useContext } from 'react'
 import { BrowserRouter as Router } from 'react-router-dom'
+// import dynamic from 'next/dynamic'
 
 // INTERNAL IMPORT
-import { CrowdFundingContext } from '../Context/CrowdFunding'
+import { CrowdFundingContext } from '@/Context/CrowdFunding'
 import Logo from "../components/Logo"
 import Menu from "../components/Menu"
 
 const NavBar = () => {
   const { currentAccount, connectWallet } = useContext(CrowdFundingContext)
+  // const currentAccount = CrowdFundingContext.currentAccount
+  // const connectWallet = CrowdFundingContext.connectWallet
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   const menuList = ["Home", "About", "Projects", "Donation", "Members"]
