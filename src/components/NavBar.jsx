@@ -1,23 +1,26 @@
 'use client'
 
 import React, { useState, useContext } from 'react'
-import { BrowserRouter as Router } from 'react-router-dom'
-// import dynamic from 'next/dynamic'
+import { useEthers } from '@usedapp/core'
 
 // INTERNAL IMPORT
-import { CrowdFundingContext } from '@/Context/CrowdFunding'
 import Logo from "../components/Logo"
 import Menu from "../components/Menu"
 
 const NavBar = () => {
-  const { currentAccount, connectWallet } = useContext(CrowdFundingContext)
-  // const currentAccount = CrowdFundingContext.currentAccount
-  // const connectWallet = CrowdFundingContext.connectWallet
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+
+  const { activateBrowserWallet, account } = useEthers()
+
+  // Handle wallet connection
+  const handleWalletConnect = () => {
+    if (!account) {
+      activateBrowserWallet()
+    }
+  }
 
   const menuList = ["Home", "About", "Projects", "Donation", "Members"]
   return (
-    <Router>
       <div className='backgroundMain'>
         <div className='px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8'>
           <div className='relative flex items-center justify-between'>
@@ -50,11 +53,11 @@ const NavBar = () => {
               </ul>
             </div>
 
-            {!currentAccount && (
+            {!account && (
               <ul className='items-center hidden space-x-8 lg:flex'>
                 <li>
                   <button
-                    onClick={() => connectWallet()}
+                    onClick={handleWalletConnect}
                     className='background button-hover-effect inline-flex items-center justify-center h-12 px-6 font-bold tracking-wide text-white transition duration-200 rounded shadow-md focus:shadow-outline focus:outline-none'
                     aria-label='Sign up'
                   >
@@ -142,7 +145,6 @@ const NavBar = () => {
           </div>
         </div>
       </div>
-    </Router>
   )
 }
 
