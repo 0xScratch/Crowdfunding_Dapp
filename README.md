@@ -4,7 +4,7 @@
 
 ## Description
 
-Welcome to elegant and innovative CrowdFunding Dapp!
+Welcome to the elegant and innovative CrowdFunding Dapp!
 
 This Dapp provides a seamless and secure platform for individuals and organizations to raise funds for their creative projects, charitable causes, and entrepreneurial ventures. With its user-friendly interface and smart contract technology, you can easily create and manage your crowdfunding campaigns, attracting a global community of supporters.
 
@@ -49,7 +49,7 @@ To set up and install the CrowdFunding Dapp, follow these steps:
     npx hardhat node
     ```
 
-6. Open a different terminal for deploying the contract to local hardhat blockchain:
+6. Open a different terminal for deploying the contract to the local hardhat blockchain:
 
     ```bash
     npx hardhat --network localhost run scripts/deploy.js
@@ -69,11 +69,11 @@ The CrowdFunding Dapp is designed to provide a seamless experience for creating 
 
 1. **Create a Campaign**: Users can easily create a new crowdfunding campaign by providing details such as the campaign name, description, funding goal, and deadline.
 
-2. **Contribute to a Campaign**: Supporters can contribute funds to a campaign by specifying the amount they wish to donate. The smart contract ensures the security and transparency of the transactions.
+2. **Contribute to a Campaign**: Supporters can contribute funds by specifying the amount they wish to donate. The smart contract ensures the security and transparency of the transactions.
 
 3. **Track Campaign Progress**: The Dapp provides real-time updates on the progress of each campaign, including the amount raised and the remaining time.
 
-<!-- 4. Withdraw Funds: Once a campaign reaches its funding goal, the creator can withdraw the funds and use them for the intended purpose. The smart contract ensures that only the campaign creator can initiate the withdrawal. -->
+<!-- 4. Withdraw Funds: Once a campaign reaches its funding goal, the creator can withdraw and use the funds for the intended purpose. The smart contract ensures that only the campaign creator can initiate the withdrawal. -->
 
 <!-- 5. Engage with Supporters: The Dapp allows campaign creators to communicate with their supporters through comments and updates, fostering a sense of community and engagement. -->
 
@@ -91,7 +91,7 @@ To contribute to the project, follow these steps:
 4. Push your branch to your forked repository.
 5. Open a pull request, describing the changes you made and why they should be merged.
 
-Thank you for your interest in improving the CrowdFunding Dapp!
+I appreciate your interest in improving the CrowdFunding Dapp!
 
 ## Contact
 
