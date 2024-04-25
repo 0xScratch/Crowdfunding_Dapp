@@ -166,17 +166,18 @@ export const CrowdFundingProvider = ({children}) => {
     }, [])
 
     // ---CONNECT WALLET FUNCTION---
-    const connectWallet = async () => {
+    const connectWallet = () => {
         try {
-            if (!window.ethereum) return console.log("Install MetaMask")
-
-            const accounts = await window.ethereum.request({
-                method: "eth_requestAccounts",
-            })
-
-            setCurrentAccount(accounts[0])
+            if (window.ethereum){
+                window.ethereum.request({method: 'eth_requestAccounts'}).then(result =>{
+                    accountChanged([result[0]]) 
+                    
+                })
+            } else{
+                setErrorMsg('Please install metamask..')
+            }
         } catch (error) {
-            console.log("Error while connecting to wallet")
+            console.log(error)
         }
     }
 
