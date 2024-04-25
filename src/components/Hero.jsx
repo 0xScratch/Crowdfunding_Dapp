@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const Hero = ({ titleData, createCampaign }) => {
+const Hero = ({ createCampaign }) => {
   const [campaign, setCampaign] = useState({
     title: "",
     description: "",
