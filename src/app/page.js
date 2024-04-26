@@ -179,14 +179,14 @@ const index = () => {
       <Hero createCampaign={createCampaign} />
 
       <Card
-        title="All Listed Campaign"
+        title="All Listed Campaigns"
         allcampaign={allCampaign}
         setOpenModel={setOpenModel}
         setDonate={setDonateCampaign}
       />
 
       <Card
-        title="Your Created Campaign"
+        title="Your Created Campaigns"
         allcampaign={userCampaign}
         setOpenModel={setOpenModel}
         setDonate={setDonateCampaign}
