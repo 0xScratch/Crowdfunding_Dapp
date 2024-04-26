@@ -2,11 +2,15 @@
 
 import React, { useEffect, useContext, useState } from "react";
 import { Contract } from "ethers";
-import { useEthers, useContractFunction, useCall } from "@usedapp/core";
+import {
+  useEthers,
+  useContractFunction,
+  useCall,
+  Sepolia,
+} from "@usedapp/core";
 import { CrowdFundingAddress, CrowdFundingABI } from "@/Context/Constants";
 
 // INTERNAL IMPORT
-import { CrowdFundingContext } from "../Context/CrowdFunding";
 import { Hero, Card, PopUp } from "../components";
 
 const index = () => {
@@ -18,6 +22,17 @@ const index = () => {
 
   // fetching account, chainId and switchNetwork from useEthers
   const { account, chainId, switchNetwork } = useEthers();
+
+  // send and state hooks for various functions
+  const { send: createCampaignSend } = useContractFunction(
+    crowdFundingContract,
+    "createCampaign"
+  );
+
+  const { send: donateSend } = useContractFunction(
+    crowdFundingContract,
+    "donateToCampaign"
+  );
 
   // getCampaigns function
   const getCampaigns = async () => {
@@ -69,6 +84,70 @@ const index = () => {
     }));
 
     return userData;
+  };
+
+  // createCampaign function
+  const createCampaign = async (event, campaign) => {
+    event.preventDefault();
+
+    try {
+      if (chainId !== Sepolia.chainId) {
+        switchNetwork(Sepolia.chainId);
+      }
+
+      const { title, description, amount, deadline } = campaign;
+
+      const ethersAmount = ethers.utils.parseUnits(amount, 18);
+
+      await createCampaignSend(
+        account,
+        title,
+        description,
+        ethersAmount,
+        deadline
+      );
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  // donate function
+  const donate = async (event, pId, amount) => {
+    event.preventDefault();
+
+    try {
+      if (chainId !== Sepolia.chainId) {
+        switchNetwork(Sepolia.chainId);
+      }
+
+      const ethersAmount = ethers.utils.parseEther(amount);
+
+      await donateSend(pId, { value: ethersAmount });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  // getDonations function
+  const getDonations = async (pId) => {
+    const donations = await useCall({
+      crowdFundingContract,
+      method: "getDonators",
+      args: [pId],
+    });
+
+    const numberOfDonations = donations[0].length;
+
+    const parsedDonations = [];
+
+    for (let i = 0; i < numberOfDonations; i++) {
+      parsedDonations.push({
+        donator: donations[0][i],
+        amount: ethers.utils.formatEther(donations[1][i].toString()),
+      });
+    }
+
+    return parsedDonations;
   };
 
   const [allCampaign, setAllCampaign] = useState();
