@@ -1,7 +1,7 @@
 import React from 'react'
 
 const Card = ({ allcampaign, setOpenModel, setDonate, title }) => {
-  console.log(allcampaign)
+  // console.log(allcampaign)
 
   const daysLeft = (deadline) => {
     const difference = new Date(deadline).getTime() - Date.now()

@@ -7,7 +7,7 @@ const PopUp = ({ setOpenModel, donate, donateFunction, getDonations }) => {
   const createDonation = async () => {
     try {
       const data = await donateFunction(donate.pId, amount)
-      console.log(data)
+      // console.log(data)
     } catch (error) {
       console.log(error)
     }

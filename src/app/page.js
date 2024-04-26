@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useContext, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Contract } from "ethers";
 import {
   useEthers,
@@ -153,27 +153,27 @@ const index = () => {
   const [allCampaign, setAllCampaign] = useState();
   const [userCampaign, setUserCampaign] = useState();
 
-  useEffect(() => {
-    const getData = async () => {
-      try {
-        const getCampaignsData = await getCampaigns();
-        const userCampaignsData = await getUserCampaigns();
+  // useEffect(() => {
+  //   const getData = async () => {
+  //     try {
+  //       const getCampaignsData = await getCampaigns();
+  //       const userCampaignsData = await getUserCampaigns();
 
-        setAllCampaign(getCampaignsData);
-        setUserCampaign(userCampaignsData);
-      } catch (error) {
-        console.log(error);
-      }
-    };
+  //       setAllCampaign(getCampaignsData);
+  //       setUserCampaign(userCampaignsData);
+  //     } catch (error) {
+  //       console.log(error);
+  //     }
+  //   };
 
-    getData();
-  }, []);
+  //   getData();
+  // }, []);
 
   // DONATE POPUP MODEL
   const [openModel, setOpenModel] = useState(false);
   const [donateCampaign, setDonateCampaign] = useState();
 
-  console.log(donateCampaign);
+  // console.log(donateCampaign);
   return (
     <>
       <Hero createCampaign={createCampaign} />
