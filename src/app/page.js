@@ -87,7 +87,7 @@ const index = () => {
   };
 
   // createCampaign function
-  const createCampaign = async (event, campaign) => {
+  const  createCampaign = async (event, campaign) => {
     event.preventDefault();
 
     try {
@@ -176,7 +176,13 @@ const index = () => {
   // console.log(donateCampaign);
   return (
     <>
-      <Hero createCampaign={createCampaign} />
+      <Hero 
+        createCampaign={createCampaign} 
+        contract={crowdFundingContract} 
+        account={account}
+        chainId={chainId}
+        switchNetwork={switchNetwork}
+      />
 
       <Card
         title="All Listed Campaigns"

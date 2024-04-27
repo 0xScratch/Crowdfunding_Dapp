@@ -1,6 +1,11 @@
 import React, { useState } from "react";
+import {
+  useContractFunction,
+  useCall,
+  Sepolia
+} from "@usedapp/core";
 
-const Hero = ({ createCampaign }) => {
+const Hero = ({ createCampaign, contract, account, chainId, switchNetwork }) => {
   const [campaign, setCampaign] = useState({
     title: "",
     description: "",
