@@ -21,13 +21,7 @@ const index = () => {
   );
 
   // fetching account, chainId and switchNetwork from useEthers
-  const { account, chainId, switchNetwork } = useEthers();
-
-  // send and state hooks for various functions
-  const { send: createCampaignSend } = useContractFunction(
-    crowdFundingContract,
-    "createCampaign"
-  );
+  const { account, chainId, switchNetwork } = useEthers(); 
 
   const { send: donateSend } = useContractFunction(
     crowdFundingContract,

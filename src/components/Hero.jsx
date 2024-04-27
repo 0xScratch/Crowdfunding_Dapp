@@ -5,14 +5,45 @@ import {
   Sepolia
 } from "@usedapp/core";
 
-const Hero = ({ createCampaign, contract, account, chainId, switchNetwork }) => {
+const Hero = ({ contract, account, chainId, switchNetwork }) => {
   const [campaign, setCampaign] = useState({
     title: "",
     description: "",
     amount: "",
     deadline: "",
   })
+
+  // send and state hooks for createCampaign function
+  const { send: createCampaignSend } = useContractFunction(
+    contract,
+    "createCampaign"
+  );
   
+  // createCampaign function
+ const  createCampaign = async (event, campaign) => {
+    event.preventDefault();
+
+    try {
+      if (chainId !== Sepolia.chainId) {
+        switchNetwork(Sepolia.chainId);
+      }
+
+      const { title, description, amount, deadline } = campaign;
+
+      const ethersAmount = ethers.utils.parseUnits(amount, 18);
+
+      await createCampaignSend(
+        account,
+        title,
+        description,
+        ethersAmount,
+        deadline
+      );
+    } catch (error) {
+      console.log(error);
+    }
+  } 
+
   const createNewCampaign = async (e) => {
     e.preventDefault()
     try {
