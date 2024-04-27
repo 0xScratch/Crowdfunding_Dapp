@@ -8,6 +8,7 @@ import {
   useCall,
   Sepolia,
 } from "@usedapp/core";
+
 import { CrowdFundingAddress, CrowdFundingABI } from "@/Context/Constants";
 
 // INTERNAL IMPORT
@@ -78,32 +79,7 @@ const index = () => {
     }));
 
     return userData;
-  };
-
-  // createCampaign function
-  const  createCampaign = async (event, campaign) => {
-    event.preventDefault();
-
-    try {
-      if (chainId !== Sepolia.chainId) {
-        switchNetwork(Sepolia.chainId);
-      }
-
-      const { title, description, amount, deadline } = campaign;
-
-      const ethersAmount = ethers.utils.parseUnits(amount, 18);
-
-      await createCampaignSend(
-        account,
-        title,
-        description,
-        ethersAmount,
-        deadline
-      );
-    } catch (error) {
-      console.log(error);
-    }
-  };
+  }; 
 
   // donate function
   const donate = async (event, pId, amount) => {

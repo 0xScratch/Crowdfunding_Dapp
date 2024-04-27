@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import {
   useContractFunction,
-  useCall,
   Sepolia
 } from "@usedapp/core";
 
