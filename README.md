@@ -73,7 +73,7 @@ The CrowdFunding Dapp is designed to provide a seamless experience for creating 
 
 3. **Track Campaign Progress**: The Dapp provides real-time updates on the progress of each campaign, including the amount raised and the remaining time.
 
-<!-- 4. Withdraw Funds: Once a campaign reaches its funding goal, the creator can withdraw and use the funds for the intended purpose. The smart contract ensures that only the campaign creator can initiate the withdrawal. -->
+<!-- 4. Withdraw Funds: Once a campaign reaches its goal, the creator can withdraw and use the funds for the intended purpose. The smart contract ensures that only the campaign creator can initiate the withdrawal. -->
 
 <!-- 5. Engage with Supporters: The Dapp allows campaign creators to communicate with their supporters through comments and updates, fostering a sense of community and engagement. -->
 
