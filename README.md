@@ -81,7 +81,7 @@ The CrowdFunding Dapp is designed to provide a seamless experience for creating 
 
 ## Contributing
 
-Contributions to the CrowdFunding Dapp project are welcome! If you have ideas for new features, bug fixes, or improvements, feel free to open a pull request. Please ensure that your contributions align with the project's goals and follow the established coding conventions.
+Contributions to the CrowdFunding Dapp are welcome! If you have ideas for new features, bug fixes, or improvements, feel free to open a pull request. Please ensure that your contributions align with the project's goals and follow the established coding conventions.
 
 To contribute to the project, follow these steps:
 
