@@ -91,8 +91,6 @@ To contribute to the project, follow these steps:
 4. Push your branch to your forked repository.
 5. Open a pull request, describing the changes you made and why they should be merged.
 
-I appreciate your interest in improving the CrowdFunding Dapp!
-
 ## Contact
 
 React out to me through my [profile](https://github.com/Aryan9592) for any queries!
